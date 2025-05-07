@@ -5,7 +5,7 @@ function getAdatTeszt_jo_vegpont() {
     jó adatokat kapunk-e a végpontról */
     const modell = new Modell();
     /* mock adatokat gyártok, ezzel hívom meg a függvényt */
-    let tesztJoVegpont = "http://fakestoreapi.com/products";
+    let tesztJoVegpont = "https://pokeapi.co/api/v2/pokemon-form/1";
     const vart = {
         form_name: "",
         form_names: [],
@@ -57,7 +57,7 @@ function getAdatTeszt_jo_vegpont() {
     function tesztCallack(adat) {
         /* adat - lista */
         console.log("lefutott a fetch a jó végponttal");
-        console.assert(JSON.stringify(adat[0]) === JSON.stringify(vart), "hibás adatot kaptunk a jó végpontra");
+        console.assert(JSON.stringify(adat) === JSON.stringify(vart), "hibás adatot kaptunk a jó végpontra");
         console.log("lefutott a callback");
     }
 
@@ -76,7 +76,7 @@ function getAdatTeszt_nem_jo_vegpont() {
     jó adatokat kapunk-e a végpontról */
     const modell = new Modell();
     /* mock adatokat gyártok, ezzel hívom meg a függvényt */
-    let tesztJoVegpont = "http://fakestoreapi.com/nincsisolyan";
+    let tesztJoVegpont = "https://pokeapi.co/api/v2/pokemon-form/nincsisolyan";
     const vart = {
         id: 1,
         title: "Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops",
